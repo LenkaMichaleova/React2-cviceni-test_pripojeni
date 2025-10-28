@@ -1,8 +1,8 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import HomePage from './components/HomePage';
-import ConnectedPage from './components/ConnectedPage';
+import { BrowserRouter, Routes, Route, Link } from 'react-router';
+import { HomePage } from './components/HomePage';
+import { ConnectedPage } from './components/ConnectedPage';
 
-export const App: React.FC = () => {
+export function App() {
   return (
     <BrowserRouter>
       <nav className="container">

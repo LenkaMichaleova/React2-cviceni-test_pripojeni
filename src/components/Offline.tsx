@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const Offline = () => {
+export function Offline() {
   const [isOnline, setIsOnline] = useState<boolean>(navigator.onLine);
 
   if (isOnline) {
