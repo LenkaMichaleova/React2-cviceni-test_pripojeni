@@ -1,7 +1,27 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export function Offline() {
   const [isOnline, setIsOnline] = useState<boolean>(navigator.onLine);
+
+  useEffect(() => {
+    console.log('mounted')
+    window.addEventListener('offline', handleOffline);
+    window.addEventListener('online', handleOnline);
+    
+    return () => {
+      console.log('UNMOUNT')
+      window.removeEventListener('offline', handleOffline);
+      window.removeEventListener('online', handleOnline);
+    }
+  }, [])
+
+  function handleOffline () {
+    setIsOnline(false)
+  }
+
+  function handleOnline () {
+    setIsOnline(true)
+  }
 
   if (isOnline) {
     return (
