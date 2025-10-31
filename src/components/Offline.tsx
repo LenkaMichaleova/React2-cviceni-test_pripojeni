@@ -4,7 +4,7 @@ export function Offline() {
   const [isOnline, setIsOnline] = useState<boolean>(navigator.onLine);
 
   useEffect(() => {
-    console.log('mounted')
+    console.log('mounted ')
     window.addEventListener('offline', handleOffline);
     window.addEventListener('online', handleOnline);
     
@@ -17,6 +17,7 @@ export function Offline() {
 
   function handleOffline () {
     setIsOnline(false)
+    console.log('jste offline')
   }
 
   function handleOnline () {
